@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         when (requestCode) {
             PERMISSIONS_REQUEST_CODE ->
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    changeButtonStatus(play_pause_button.isEnabled)
+                    changeButtonStatus(mTimer == null)
                 }
         }
     }
