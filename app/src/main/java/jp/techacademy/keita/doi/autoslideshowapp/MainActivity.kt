@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
@@ -84,11 +85,13 @@ class MainActivity : AppCompatActivity() {
             play_pause_button.isEnabled = true
             forward_button.isEnabled = true
             backward_button.isEnabled = true
+            stop_icon.visibility = ImageView.VISIBLE
         } else {
             play_pause_button.text = "停止"
             play_pause_button.isEnabled = true
             forward_button.isEnabled = false
             backward_button.isEnabled = false
+            stop_icon.visibility = ImageView.INVISIBLE
         }
     }
 }
