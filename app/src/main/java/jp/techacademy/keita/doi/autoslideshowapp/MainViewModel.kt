@@ -23,6 +23,7 @@ class MainViewModel: ViewModel() {
     }
 
     fun getForwardImageUri(): Uri {
+        if (mUriList.isNullOrEmpty()) return Uri.EMPTY
         var index = mUriList.binarySearch(currentViewImageUri)
         if (index == mUriList.lastIndex) index = 0  else index++
         currentViewImageUri = mUriList[index]
@@ -30,6 +31,7 @@ class MainViewModel: ViewModel() {
     }
 
     fun getBackwardImageUri(): Uri {
+        if (mUriList.isNullOrEmpty()) return Uri.EMPTY
         var index = mUriList.binarySearch(currentViewImageUri)
         if (index == 0) index = mUriList.lastIndex  else index--
         currentViewImageUri = mUriList[index]
